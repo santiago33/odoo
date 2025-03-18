@@ -11,5 +11,3 @@ class HHDoctor(models.Model):
     name = fields.Char()
     profession = fields.Char()
     work_experience = fields.Integer()
-
-

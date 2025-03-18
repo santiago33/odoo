@@ -1,5 +1,4 @@
 import logging
-from dataclasses import fields
 
 from odoo import models, fields
 
@@ -13,5 +12,3 @@ class HHPatient(models.Model):
     name = fields.Char()
     birthday = fields.Date()
     gender = fields.Char()
-
-

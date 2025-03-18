@@ -1,5 +1,4 @@
 <odoo>
-    <data>
         <record id="hh_patient_1" model="hr.hospital.patient">
             <field name="name">Степанюк Ольга Олександрівна</field>
             <field name="birthday">1970-02-02</field>
@@ -16,5 +15,4 @@
             <field name="birthday">1990-04-04</field>
             <field name="gender">М</field>
         </record>
-    </data>
 </odoo>

@@ -1,5 +1,4 @@
 <odoo>
-    <data>
         <record id="hh_doctor_1" model="hr.hospital.doctor">
             <field name="name">Мазепа Дмитро Дмитрович</field>
             <field name="profession">хірург</field>
@@ -15,5 +14,4 @@
             <field name="profession">терапевт</field>
             <field name="work_experience">12</field>
         </record>
-    </data>
 </odoo>
