@@ -10,15 +10,12 @@ class HHVisit(models.Model):
 
     visit_date = fields.Date()
     is_active = fields.Boolean(default=True, )
-    res_doctor_id = fields.Many2one(
+    doctor_id = fields.Many2one(
         cmodel_name='hr.hospital.doctor',
-        string="Doctor",
     )
-    res_patient_id = fields.Many2one(
+    patient_id = fields.Many2one(
         cmodel_name='hr.hospital.patient',
-        string="Patient",
     )
-    res_diseases_id = fields.Many2one(
+    diseases_id = fields.Many2one(
         cmodel_name='hr.hospital.diseases',
-        string="Diseases",
     )
