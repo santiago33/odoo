@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="hh_doctor_1" model="hr.hospital.doctor">
+            <field name="name">Мазепа Дмитро Дмитрович</field>
+            <field name="profession">хірург</field>
+            <field name="work_experience">5</field>
+        </record>
+        <record id="hh_doctor_2" model="hr.hospital.doctor">
+            <field name="name">Коваль Олег Олегович </field>
+            <field name="profession">кардіолог</field>
+            <field name="work_experience">2</field>
+        </record>
+        <record id="hh_doctor_3" model="hr.hospital.doctor">
+            <field name="name">Шевченко Василь Васильович</field>
+            <field name="profession">терапевт</field>
+            <field name="work_experience">12</field>
+        </record>
+    </data>
+</odoo>

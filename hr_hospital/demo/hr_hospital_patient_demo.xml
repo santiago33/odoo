@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id="hh_patient_1" model="hr.hospital.patient">
+            <field name="name">Степанюк Ольга Олександрівна</field>
+            <field name="birthday">1970-02-02</field>
+            <field name="gender">Ж</field>
+
+        </record>
+        <record id="hh_patient_2" model="hr.hospital.patient">
+            <field name="name">Гамула Віктор Вікторович</field>
+            <field name="birthday">1980-03-03</field>
+            <field name="gender">М</field>
+        </record>
+        <record id="hh_patient_3" model="hr.hospital.patient">
+            <field name="name">Копаль Денис Денисович</field>
+            <field name="birthday">1990-04-04</field>
+            <field name="gender">М</field>
+        </record>
+    </data>
+</odoo>
