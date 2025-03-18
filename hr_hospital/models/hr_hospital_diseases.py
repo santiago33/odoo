@@ -10,5 +10,3 @@ class HHDiseases(models.Model):
 
     name = fields.Char()
     description = fields.Text()
-
-
