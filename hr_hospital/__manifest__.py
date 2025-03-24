@@ -1,9 +1,9 @@
 {
     "name": "HR Hospital",
     "version": "17.0.1.0.0",
-    'license': 'OPL-1',
+    "license": 'OPL-1',
     "author": "Oleksandr Yushko",
-    "website": "https://github.com/santiago33",
+    "website": "https://github.com/santiago33/odoo",
     "category": "Human Resources",
 
     "depends": [
@@ -17,17 +17,21 @@
     "data": [
         'security/ir.model.access.csv',
 
+        "wizard/hr_hospital_patient_wizard_view.xml",
+
         "views/hr_hospital_menu.xml",
         "views/hr_hospital_doctor_views.xml",
         "views/hr_hospital_visit_views.xml",
         "views/hr_hospital_diseases_views.xml",
         "views/hr_hospital_patient_views.xml",
-        "data/hr.hospital.diseases.csv",
+        "views/hr_hospital_diagnosis_views.xml",
+
+        "data/hr_hospital_diseases_data.xml",
     ],
 
     "demo": [
-        "demo/hr_hospital_doctor_demo.xml",
         "demo/hr_hospital_patient_demo.xml",
+        "demo/hr_hospital_doctor_demo.xml",
     ],
 
     "assets": {

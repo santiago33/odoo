@@ -1,17 +1,17 @@
 <odoo>
         <record id="hh_doctor_1" model="hr.hospital.doctor">
-            <field name="name">Мазепа Дмитро Дмитрович</field>
-            <field name="profession">хірург</field>
+            <field name="full_name">Virat Kohli</field>
+            <field name="speciality_id">4</field>
             <field name="work_experience">5</field>
         </record>
         <record id="hh_doctor_2" model="hr.hospital.doctor">
-            <field name="name">Коваль Олег Олегович </field>
-            <field name="profession">кардіолог</field>
+            <field name="full_name">Steve Smith</field>
+            <field name="speciality_id">3</field>
             <field name="work_experience">2</field>
         </record>
         <record id="hh_doctor_3" model="hr.hospital.doctor">
-            <field name="name">Шевченко Василь Васильович</field>
-            <field name="profession">терапевт</field>
+            <field name="full_name">James Anderson</field>
+            <field name="speciality_id">1</field>
             <field name="work_experience">12</field>
         </record>
 </odoo>

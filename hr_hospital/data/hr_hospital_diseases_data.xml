@@ -1,0 +1,42 @@
+<odoo>
+    <record id="hh_diseases_1" model="hr.hospital.diseases">
+        <field name="name">Nervous system</field>
+        <field name="description">description 1</field>
+    </record>
+    <record id="hh_diseases_2" model="hr.hospital.diseases">
+        <field name="name">meningitis</field>
+        <field name="description">description 2</field>
+        <field name="parent_id" ref="hh_diseases_1"></field>
+    </record>
+    <record id="hh_diseases_3" model="hr.hospital.diseases">
+        <field name="name">encephalitis</field>
+        <field name="description">description 3</field>
+        <field name="parent_id" ref="hh_diseases_1"></field>
+    </record>
+    <record id="hh_diseases_4" model="hr.hospital.diseases">
+        <field name="name">myelitis</field>
+        <field name="description">description 4</field>
+        <field name="parent_id" ref="hh_diseases_1"></field>
+    </record>
+    <record id="hh_diseases_5" model="hr.hospital.diseases">
+        <field name="name">Respiratory system</field>
+        <field name="description">description 5</field>
+    </record>
+    <record id="hh_diseases_6" model="hr.hospital.diseases">
+        <field name="name">asthma</field>
+        <field name="description">description 6</field>
+        <field name="parent_id" ref="hh_diseases_5"></field>
+    </record>
+    <record id="hh_diseases_7" model="hr.hospital.diseases">
+        <field name="name">pneumonia</field>
+        <field name="description">description 7</field>
+        <field name="parent_id" ref="hh_diseases_5"></field>
+    </record>
+    <record id="hh_diseases_8" model="hr.hospital.diseases">
+        <field name="name">tuberculosis</field>
+        <field name="description">description 8</field>
+        <field name="parent_id" ref="hh_diseases_5"></field>
+    </record>
+
+
+</odoo>

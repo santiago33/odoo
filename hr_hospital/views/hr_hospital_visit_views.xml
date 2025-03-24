@@ -4,10 +4,12 @@
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="visit_date"/>
-                <field name="is_active"/>
-                <field name="res_patient_id" ref="hr.hospital.patient"/>
-
+                <field name="scheduled_date"/>
+                <field name="completed_date"/>
+                <field name="status_id"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="diagnosis_id" widget="many2one"/>
             </tree>
         </field>
     </record>
@@ -20,8 +22,12 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="visit_date" required="1"/>
-                            <field name="is_active"/>
+                            <field name="scheduled_date"/>
+                            <field name="completed_date"/>
+                            <field name="doctor_id"/>
+                            <field name="patient_id"/>
+                            <field name="diagnosis_id"/>
+
                         </group>
                     </group>
                 </sheet>
