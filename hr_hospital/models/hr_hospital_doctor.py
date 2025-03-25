@@ -1,6 +1,6 @@
 import logging
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -15,20 +15,22 @@ class HHDoctor(models.Model):
     work_experience = fields.Integer()
     is_intern = fields.Boolean(default=False)
 
-    mentor_id  = fields.Many2one(
+    mentor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor mentor for intern'
+        string='Doctor mentor for intern',
+        domain=[('is_intern', '=', False)],
     )
-    speciality_id = fields.Selection(
-        selection=[('1', 'Allergy and Immunology'),
-                   ('2', 'Cardiology'),
-                   ('3', 'Anesthesiology'),
-                   ('4', 'Dermatology'),
-                   ('5', 'Family Medicine'),
-                   ],
+    speciality = fields.Selection(
+        selection=[
+            ('1', _('Allergy and Immunology')),
+            ('2', _('Cardiology')),
+            ('3', _('Anesthesiology')),
+            ('4', _('Dermatology')),
+            ('5', _('Family Medicine')),
+        ],
     )
 
-    patient_ids =fields.Many2many(
+    patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
 
     )
@@ -36,5 +38,5 @@ class HHDoctor(models.Model):
     @api.constrains('mentor_id')
     def _check_mentor_id(self):
         for record in self:
-            if record.is_intern and record.mentor_id:
-                raise ValidationError('An intern cannot be a mentor.')
+            if record.mentor_id and record.mentor_id.is_intern:
+                raise ValidationError(_('An intern cannot be a mentor.'))

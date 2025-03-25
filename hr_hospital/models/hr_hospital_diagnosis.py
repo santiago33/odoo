@@ -17,4 +17,4 @@ class HHDiagnosis(models.Model):
     )
     diseases_id = fields.Many2one(
         comodel_name="hr.hospital.visit",
-)
+    )

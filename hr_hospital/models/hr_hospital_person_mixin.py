@@ -1,5 +1,8 @@
 import logging
-from odoo import models, fields
+
+from odoo import models, fields, _
+
+_logger = logging.getLogger(__name__)
 
 
 class PersonMixin(models.AbstractModel):
@@ -9,4 +12,11 @@ class PersonMixin(models.AbstractModel):
     full_name = fields.Char(required=True, )
     phone = fields.Char()
     photo = fields.Binary()
-    gender = fields.Char()
+    gender = fields.Selection(
+        default="scheduled",
+        selection=[
+            ('m', _('Men')),
+            ('w', _('Woman')),
+            ('o', _('Other')),
+        ]
+    )

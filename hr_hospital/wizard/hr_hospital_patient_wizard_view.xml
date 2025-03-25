@@ -32,7 +32,5 @@
         <field name="binding_model_id"
                ref="hr_hospital.model_hr_hospital_patient"/>
         <field name="binding_view_types">list,form</field>
-
     </record>
-
 </odoo>

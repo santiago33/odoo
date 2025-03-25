@@ -6,7 +6,7 @@
             <tree>
                 <field name="scheduled_date"/>
                 <field name="completed_date"/>
-                <field name="status_id"/>
+                <field name="status"/>
                 <field name="doctor_id"/>
                 <field name="patient_id"/>
                 <field name="diagnosis_id" widget="many2one"/>
@@ -18,7 +18,6 @@
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <form>
-                <header></header>
                 <sheet>
                     <group>
                         <group>
