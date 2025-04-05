@@ -13,7 +13,7 @@ class PersonMixin(models.AbstractModel):
     phone = fields.Char()
     photo = fields.Binary()
     gender = fields.Selection(
-        default="scheduled",
+        default="o",
         selection=[
             ('m', _('Men')),
             ('w', _('Woman')),

@@ -19,9 +19,9 @@ class HHVisit(models.Model):
     status = fields.Selection(
         default="scheduled",
         selection=[
-            ('scheduled', 'Scheduled'),
-            ('completed', 'Completed'),
-            ('cancelled', 'Canceled'),
+            ('scheduled', _('Scheduled')),
+            ('completed', _('Completed')),
+            ('cancelled', _('Canceled')),
         ],
     )
     doctor_id = fields.Many2one(
@@ -42,6 +42,13 @@ class HHVisit(models.Model):
         for record in self:
             if record.scheduled_date < datetime.now():
                 raise ValidationError(_("Visit is begun"))
+
+    @api.constrains('completed_date', 'status')
+    def _check_status(self):
+        for record in self:
+            if record.status == 'completed' and not record.completed_date:
+                raise ValidationError(
+                    _('Set completed date for status "completed"'))
 
     @api.constrains('scheduled_date', 'doctor_id', 'patient_id')
     def _check_visit_uniq_for_day(self):

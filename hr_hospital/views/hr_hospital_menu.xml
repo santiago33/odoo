@@ -4,5 +4,5 @@
 
     <menuitem id="hr_hospital_menu"
               parent="hr_hospital_main_menu"
-              name="Menu" sequence="200"/>
+              name="Visit" sequence="200"/>
 </odoo>

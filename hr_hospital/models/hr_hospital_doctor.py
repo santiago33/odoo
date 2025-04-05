@@ -32,7 +32,14 @@ class HHDoctor(models.Model):
 
     patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
-
+        inverse_name='doctor_ids',
+        string="Patients"
+    )
+    intern_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id',
+        string="Interns",
+        domain=[('is_intern', '=', True)],
     )
 
     @api.constrains('mentor_id')
@@ -40,3 +47,16 @@ class HHDoctor(models.Model):
         for record in self:
             if record.mentor_id and record.mentor_id.is_intern:
                 raise ValidationError(_('An intern cannot be a mentor.'))
+
+    def action_create_visit(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'New visit',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.id,
+            }
+        }

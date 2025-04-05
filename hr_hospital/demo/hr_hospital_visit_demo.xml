@@ -1,0 +1,62 @@
+<odoo>
+    <record id="hh_visit_1" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-05-01 11:15:00</field>
+        <field name="status">scheduled</field>
+        <field name="doctor_id" ref="hh_doctor_3"/>
+        <field name="patient_id" ref="hh_patient_3"/>
+    </record>
+    <record id="hh_visit_2" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-10 11:00:00</field>
+        <field name="completed_date">2025-04-10 11:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_2"/>
+        <field name="patient_id" ref="hh_patient_2"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_1"/>
+    </record>
+    <record id="hh_visit_3" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-08 13:00:00</field>
+        <field name="completed_date">2025-04-08 13:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_4"/>
+        <field name="patient_id" ref="hh_patient_2"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_2"/>
+
+    </record>
+    <record id="hh_visit_4" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-07 12:00:00</field>
+        <field name="completed_date">2025-04-07 12:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_1"/>
+        <field name="patient_id" ref="hh_patient_3"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_3"/>
+
+    </record>
+
+    <record id="hh_visit_5" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-07 15:00:00</field>
+        <field name="completed_date">2025-04-07 15:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_2"/>
+        <field name="patient_id" ref="hh_patient_1"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_4"/>
+    </record>
+
+    <record id="hh_visit_6" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-07 12:00:00</field>
+        <field name="completed_date">2025-04-07 12:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_3"/>
+        <field name="patient_id" ref="hh_patient_3"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_5"/>
+
+    </record>
+    <record id="hh_visit_7" model="hr.hospital.visit">
+        <field name="scheduled_date">2025-04-08 12:00:00</field>
+        <field name="completed_date">2025-04-08 12:30:00</field>
+        <field name="status">completed</field>
+        <field name="doctor_id" ref="hh_doctor_3"/>
+        <field name="patient_id" ref="hh_patient_1"/>
+        <field name="diagnosis_id" ref="hh_diagnosis_6"/>
+
+    </record>
+</odoo>

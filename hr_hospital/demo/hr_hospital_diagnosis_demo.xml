@@ -1,0 +1,27 @@
+<odoo>
+    <record id="hh_diagnosis_1" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 1 record</field>
+        <field name="diseases_id" ref="hh_diseases_3"/>
+    </record>
+    <record id="hh_diagnosis_2" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 2 record</field>
+        <field name="diseases_id" ref="hh_diseases_2"/>
+
+    </record>
+    <record id="hh_diagnosis_3" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 3 record</field>
+        <field name="diseases_id" ref="hh_diseases_4"/>
+    </record>
+    <record id="hh_diagnosis_4" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 4 record</field>
+        <field name="diseases_id" ref="hh_diseases_5"/>
+    </record>
+    <record id="hh_diagnosis_5" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 5 record</field>
+        <field name="diseases_id" ref="hh_diseases_6"/>
+    </record>
+    <record id="hh_diagnosis_6" model="hr.hospital.diagnosis">
+        <field name="description">diagnosis 6 record</field>
+        <field name="diseases_id" ref="hh_diseases_7"/>
+    </record>
+</odoo>

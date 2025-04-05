@@ -1,4 +1,7 @@
 import logging
+
+from docutils.nodes import table
+
 from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
@@ -9,19 +12,32 @@ class ReportDiseasesForMonthWizard(models.TransientModel):
     _description = 'Monthly Disease Report'
 
     start_date = fields.Date()
-    end_data = fields.Date()
-    doctor_id = fields.Many2one(
+    end_date = fields.Date()
+    doctor_ids = fields.Many2many(
         comodel_name='hr.hospital.doctor',
+        relation='doctor_report_wizard_rel'
     )
-    diseases_id = fields.Many2many(
+    diseases_ids = fields.Many2many(
         comodel_name='hr.hospital.diseases',
+        relation='diseases_report_wizard_rel'
     )
 
     def generate_report(self):
-        diseases = self.env['hr.hospital.'].search([
-            ('start_date', '>=', self.start_date),
-            ('end_date', '<=', self.end_data),
-            ('doctor_id', '=', self.doctor_id),
-            ('diseases_id', '=', self.diseases_id)
-        ])
-        return diseases
+        domain = []
+        if self.doctor_ids:
+            domain += [('visit_ids.doctor_id', 'in', self.doctor_ids.ids)]
+        if self.diseases_ids:
+            domain += [('diseases_id', 'in', self.diseases_ids.ids)]
+        if self.start_date:
+            domain += [('visit_ids.completed_date', '>=', self.start_date)]
+        if self.end_date:
+            domain += [('visit_ids.completed_date', '<=', self.end_date)]
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Report diagnosis',
+            'res_model': 'hr.hospital.diagnosis',
+            'view_mode': 'tree,form',
+            'domain': domain,
+            'context': {'group_by': 'diseases_id'},
+            'target': 'new',
+        }

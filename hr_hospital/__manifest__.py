@@ -17,7 +17,8 @@
     "data": [
         'security/ir.model.access.csv',
 
-        "wizard/hr_hospital_patient_wizard_view.xml",
+        "wizard/views/hr_hospital_patient_wizard_view.xml",
+        "wizard/views/hr_hospital_report_diseases_month_wizard_view.xml",
 
         "views/hr_hospital_menu.xml",
         "views/hr_hospital_doctor_views.xml",
@@ -30,8 +31,12 @@
     ],
 
     "demo": [
-        "demo/hr_hospital_patient_demo.xml",
         "demo/hr_hospital_doctor_demo.xml",
+        "demo/hr_hospital_patient_demo.xml",
+        "demo/hr_hospital_diagnosis_demo.xml",
+
+        "demo/hr_hospital_visit_demo.xml",
+
     ],
 
     "assets": {

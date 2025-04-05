@@ -12,9 +12,11 @@ class HHDiagnosis(models.Model):
     description = fields.Text()
     is_confirmed = fields.Boolean()
 
-    visit_id = fields.Many2many(
-        comodel_name="hr.hospital.visit",
+    visit_ids = fields.One2many(
+        comodel_name='hr.hospital.visit',
+        inverse_name='diagnosis_id',
+        string='Visits',
     )
     diseases_id = fields.Many2one(
-        comodel_name="hr.hospital.visit",
+        comodel_name='hr.hospital.diseases',
     )

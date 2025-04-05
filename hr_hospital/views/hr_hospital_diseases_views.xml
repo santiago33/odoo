@@ -39,6 +39,19 @@
         <field name="res_model">hr.hospital.diseases</field>
         <field name="view_mode">tree,form</field>
     </record>
+    <record id="hr_hospital_diseases_search" model="ir.ui.view">
+        <field name="name">hr.hospital.diseases.search ()</field>
+        <field name="model">hr.hospital.diseases</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <searchpanel>
+                    <field name="parent_id" select="multi"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
 
     <menuitem id="hr_hospital_menu_diseases_view"
               action="action_hr_hospital_diseases_window"

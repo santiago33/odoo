@@ -20,29 +20,134 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="full_name"/>
-                        <field name="is_intern"/>
-                        <field name="mentor_id"
-                               invisible='is_intern==False'/>
-                        <field name="work_experience"/>
+                        <group>
+                            <field name="full_name"/>
+                            <field name="is_intern"/>
+                            <field name="speciality"/>
+
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="gender"/>
+                            <field name="work_experience"/>
+                        </group>
+
+
                     </group>
+                    <notebook>
+                        <page string="Intern" invisible='is_intern == True'>
+                            <field name="intern_ids" readonly="1">
+                                <kanban class="o_kanban_mobile">
+                                    <field name="full_name"/>
+                                    <field name="speciality"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_record">
+                                                <div class="o_kanban_record_body">
+                                                    <div class="o_kanban_record_title">
+                                                        <strong>
+                                                            <field name="full_name"/>
+                                                        </strong>
+                                                    </div>
+                                                    <div class="text-muted">
+                                                        <span>Спеціалізація:
+                                                        </span>
+                                                        <field name="speciality"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+
+                        <page string="Mentor" invisible='is_intern == False'>
+
+                            <field name="mentor_id" readonly="1">
+                                <sheet>
+                                    <group>
+                                        <field name="full_name"/>
+                                        <field name="speciality"/>
+                                        <field name="work_experience"/>
+                                        <field name="phone"/>
+                                    </group>
+                                </sheet>
+                            </field>
+                        </page>
+
+
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+    <record id="view_doctor_search" model="ir.ui.view">
+        <field name="name">doctor.search</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="filter_intern" string="Interns"
+                        domain="[('is_intern', '=', True)]"/>
 
+                <filter name="filter_mentor"
+                        string="Mentors"
+                        domain="[('intern_ids', '!=', False)]"/>
+
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_hospital_doctor_kanban" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.kanban (hr.hospital.doctor)
+        </field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="speciality">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div>
+                            <div>
+                                <div class="o_kanban_record_title">
+                                    <field name="full_name"/>
+                                </div>
+                                <div class="text-muted">
+                                    <field name="speciality"/>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="btn btn-primary oe_kanban_action"
+                                        string="record"
+                                        name="action_create_visit"
+                                        type="object"
+
+                                >
+                                    <i class="fa fa-calendar-plus-o"/>
+                                    New visit
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
     <record id="action_hr_hospital_doctor_window"
             model="ir.actions.act_window">
         <field name="name">Doctor view</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
+
 
     <menuitem id="hr_hospital_menu_doctor_view"
               action="action_hr_hospital_doctor_window"
-              parent="hr_hospital_menu"
+              parent="hr_hospital_main_menu"
               name="Doctor" sequence="200"/>
 
 </odoo>

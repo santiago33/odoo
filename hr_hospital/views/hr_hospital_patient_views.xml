@@ -17,20 +17,54 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <group>
-                            <field name="full_name" required="1"/>
-                            <field name="birthday"/>
-                            <field name="gender"/>
-                            <field name="doctor_id"/>
+                    <header>
+                        <button name="action_open_patient_visits"
+                                type="object"
+                                string="Історія візитів"
+                                class="oe_highlight"/>
+                    </header>
 
-                        </group>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="full_name" required="1"
+                                   placeholder="Full name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="birthday"/>
+                        <field name="phone"/>
+                        <field name="gender"/>
                     </group>
+                    <separator/>
+                    <notebook>
+                        <page string="Doctor">
+                            <field name="doctor_ids"/>
+                        </page>
+
+                        <page string="Visits">
+                            <field name="visit_ids"/>
+                        </page>
+
+                        <page string="Diagnosis">
+                            <field name="diagnosis_ids"/>
+                        </page>
+                    </notebook>
+
                 </sheet>
             </form>
         </field>
     </record>
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">patient.search</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Search patient">
+                <field name="full_name"/>
+                <field name="phone"/>
 
+            </search>
+        </field>
+    </record>
 
     <record id="action_hr_hospital_patient_window"
             model="ir.actions.act_window">
@@ -38,10 +72,26 @@
         <field name="res_model">hr.hospital.patient</field>
         <field name="view_mode">tree,form</field>
     </record>
+    <record id="action_hr_hospital_patient_new_visit"
+            model="ir.actions.act_window">
+        <field name="name">New visit</field>
+        <field name="res_model">hr.hospital.visit</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id"
+               ref="hr_hospital.model_hr_hospital_patient"/>
+        <field name="context">{
+            'default_patient_id': active_id,
+            'default_status': 'scheduled',
+            'field_readonly': True
+            }
+        </field>
+    </record>
+
 
     <menuitem id="hr_hospital_menu_patient_view"
               action="action_hr_hospital_patient_window"
-              parent="hr_hospital_menu"
+              parent="hr_hospital_main_menu"
               name="Patient" sequence="200"/>
 
 </odoo>

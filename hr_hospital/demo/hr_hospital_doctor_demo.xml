@@ -1,17 +1,69 @@
 <odoo>
-        <record id="hh_doctor_1" model="hr.hospital.doctor">
-            <field name="full_name">Virat Kohli</field>
-            <field name="speciality_id">4</field>
-            <field name="work_experience">5</field>
-        </record>
-        <record id="hh_doctor_2" model="hr.hospital.doctor">
-            <field name="full_name">Steve Smith</field>
-            <field name="speciality_id">3</field>
-            <field name="work_experience">2</field>
-        </record>
-        <record id="hh_doctor_3" model="hr.hospital.doctor">
-            <field name="full_name">James Anderson</field>
-            <field name="speciality_id">1</field>
-            <field name="work_experience">12</field>
-        </record>
+    <record id="hh_doctor_1" model="hr.hospital.doctor">
+        <field name="full_name">Virat Kohli</field>
+        <field name="speciality">4</field>
+        <field name="work_experience">5</field>
+        <field name="gender">m</field>
+        <field name="phone">380334445555</field>
+
+    </record>
+    <record id="hh_doctor_2" model="hr.hospital.doctor">
+        <field name="full_name">Steve Smith</field>
+        <field name="speciality">3</field>
+        <field name="work_experience">2</field>
+        <field name="gender">m</field>
+        <field name="phone">380223334444</field>
+
+    </record>
+    <record id="hh_doctor_3" model="hr.hospital.doctor">
+        <field name="full_name">James Anderson</field>
+        <field name="speciality">1</field>
+        <field name="work_experience">12</field>
+        <field name="gender">m</field>
+        <field name="phone">380112223333</field>
+    </record>
+    <record id="hh_doctor_4" model="hr.hospital.doctor">
+        <field name="full_name">Intern 1</field>
+        <field name="speciality">2</field>
+        <field name="work_experience">0</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hh_doctor_2"/>
+
+        <field name="gender">m</field>
+        <field name="phone">380508746666</field>
+
+    </record>
+    <record id="hh_doctor_5" model="hr.hospital.doctor">
+        <field name="full_name">Intern 2</field>
+        <field name="speciality">3</field>
+        <field name="work_experience">0</field>
+        <field name="gender">m</field>
+        <field name="phone">380974781111</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hh_doctor_1"/>
+
+    </record>
+
+    <record id="hh_doctor_6" model="hr.hospital.doctor">
+        <field name="full_name">Intern 3</field>
+        <field name="speciality">1</field>
+        <field name="work_experience">0</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hh_doctor_3"/>
+
+        <field name="gender">m</field>
+        <field name="phone">380504124444</field>
+
+    </record>
+    <record id="hh_doctor_7" model="hr.hospital.doctor">
+        <field name="full_name">Intern 4</field>
+        <field name="speciality">2</field>
+        <field name="work_experience">0</field>
+        <field name="gender">m</field>
+        <field name="phone">380987569999</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hh_doctor_1"/>
+
+    </record>
+
 </odoo>
