@@ -1,7 +1,5 @@
 import logging
 
-from docutils.nodes import table
-
 from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
