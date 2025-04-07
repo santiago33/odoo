@@ -39,5 +39,10 @@ class ReportDiseasesForMonthWizard(models.TransientModel):
             'view_mode': 'tree,form',
             'domain': domain,
             'context': {'group_by': 'diseases_id'},
-            'target': 'new',
+            'target': 'inline',
         }
+
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+        res['doctor_ids'] = [(6, 0, self.env.context.get('active_ids'))]
+        return res

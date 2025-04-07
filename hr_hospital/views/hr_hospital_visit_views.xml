@@ -37,7 +37,9 @@
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <calendar string="Events" date_start="scheduled_date"
-                      date_stop="completed_date">
+                      date_stop="completed_date"
+                              color="patient_id"
+>
                 <field name="status"/>
             </calendar>
         </field>

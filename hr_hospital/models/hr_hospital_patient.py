@@ -21,9 +21,8 @@ class HHPatient(models.Model):
         store=True,
         readonly=True,
     )
-    doctor_ids = fields.Many2many(
+    doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        inverse_name='patient_ids',
         string='Personal doctor',
     )
     visit_ids = One2many(

@@ -8,6 +8,7 @@
                 <field name="birthday"/>
                 <field name="gender"/>
                 <field name="age"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
@@ -38,7 +39,7 @@
                     <separator/>
                     <notebook>
                         <page string="Doctor">
-                            <field name="doctor_ids"/>
+                            <field name="doctor_id"/>
                         </page>
 
                         <page string="Visits">
