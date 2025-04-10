@@ -24,6 +24,7 @@ class HHVisit(models.Model):
             ('cancelled', _('Canceled')),
         ],
     )
+
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
         required=True,
@@ -71,3 +72,14 @@ class HHVisit(models.Model):
         for record in self:
             if record.diagnosis_id:
                 raise UserError(_('already have a diagnosis'))
+
+    @api.model
+    def get_color_status(self, status):
+        classTxt = ''
+        if status == 'scheduled':
+            classTxt = 'text-warning'
+        if status == 'completed':
+            classTxt = 'text-success'
+        if status == 'cancelled':
+            classTxt = 'text-danger'
+        return classTxt

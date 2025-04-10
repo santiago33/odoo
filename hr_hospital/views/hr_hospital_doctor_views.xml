@@ -107,23 +107,43 @@
         <field name="arch" type="xml">
             <kanban default_group_by="speciality">
                 <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable">
+                            <a role="menuitem" type="edit"
+                               class="dropdown-item">
+                                Edit
+                            </a>
+                        </t>
+                        <t t-if="widget.deletable">
+                            <a role="menuitem" type="delete"
+                               class="dropdown-item">
+                                Delete
+                            </a>
+                        </t>
+                    </t>
+
+
                     <t t-name="kanban-box">
                         <div>
-                            <div>
-                                <div class="o_kanban_record_title">
-                                    <field name="full_name"/>
-                                </div>
-                                <div class="text-muted">
-                                    <field name="speciality"/>
-                                </div>
+
+                            <div class="o_kanban_record_title">
+                                <field name="full_name"/>
+                            </div>
+                            <div class="o_kanban_record_subtitle">
+                                <field name="speciality"/>
                             </div>
 
-                            <div>
+                            <div class="my-2 oe_kanban_card">
+                                <strong>Interns:</strong>
+                                <field name="intern_ids"
+                                       widget="many2many_tags"/>
+                            </div>
+
+                            <div class="o_kanban_record_bottom">
                                 <button class="btn btn-primary oe_kanban_action"
                                         string="record"
                                         name="action_create_visit"
                                         type="object"
-
                                 >
                                     <i class="fa fa-calendar-plus-o"/>
                                     New visit

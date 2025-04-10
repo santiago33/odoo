@@ -1,0 +1,141 @@
+<odoo>
+    <record id="action_hr_hospital_doctor_report" model="ir.actions.report">
+        <field name="name">Report for doctor</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">hr_hospital.hr_hospital_doctor_report_template</field>
+        <field name="report_file">hr_hospital.hr_hospital_doctor_report_template</field>
+        <field name="print_report_name">(object.full_name)</field>
+        <field name="attachment"/>
+        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id"
+               ref="hr_hospital.hr_hospital_doctor_paper_format"/>
+    </record>
+    <record id="hr_hospital_doctor_paper_format" model="report.paperformat">
+        <field name="name">A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">80</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">15</field>
+        <field name="dpi">180</field>
+    </record>
+
+
+    <template id="hr_hospital_doctor_report_template">
+        <t t-call="web.internal_layout">
+            <t t-call="web.html_container">
+                <main>
+                    <div class="row">
+                        <div class="col-8">
+                            <img t-attf-src="/logo.png?company={{ request.env.user.company_id.id }}"
+                                 style="padding: 0px; margin: 0px; height: 80px;"
+                                 t-att-alt="request.env.user.company_id.name"/>
+                        </div>
+
+
+                        <div class="col-4">
+                            <strong t-esc="request.env.user.company_id.name"/>
+                            <br/>
+                            <span t-esc="request.env.user.company_id.phone"/>
+                            <br/>
+                            <span t-esc="request.env.user.company_id.email"/>
+                            <br/>
+                        </div>
+                    </div>
+                    <t t-foreach="docs" t-as="doctor">
+
+                        <div>
+
+
+                            <h1 style="margin-top:20px;">Doctor's report:
+                                <span t-esc="doctor.full_name"/>
+                                —
+                                <span t-field="doctor.speciality"/>
+                            </h1>
+                            <h3>Visit`s Information</h3>
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Scheduled date</th>
+                                        <th>Patient</th>
+                                        <th>Visit status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="visits"
+                                       t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id)], order='scheduled_date desc')"/>
+                                    <tr t-foreach="visits" t-as="visit">
+                                        <td>
+                                            <span t-field="visit.scheduled_date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="visit.patient_id.full_name"/>
+                                        </td>
+                                        <td t-attf-class="{{visit.get_color_status(visit.status)}}">
+                                            <span t-field="visit.status"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <!-- Таблиця пацієнтів -->
+                            <h3 style="margin-top:30px;">Patient doctor</h3>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Full name</th>
+                                        <th>Gender</th>
+                                        <th>Birthday</th>
+                                        <th>Phone</th>
+                                        <th>Status visit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doctor.patient_ids"
+                                       t-as="patient">
+                                        <tr>
+                                            <td t-esc="patient.full_name"/>
+                                            <td>
+                                                <span t-field="patient.gender"></span>
+
+                                            </td>
+
+                                            <td t-esc="patient.birthday"/>
+                                            <td t-esc="patient.phone"/>
+                                            <t t-set="visitLast"
+                                               t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id), ('patient_id', '=', patient.id) ], order='scheduled_date desc')"/>
+                                            <t t-if="visitLast">
+
+                                                <td t-attf-class="{{visitLast.get_color_status(visitLast.status)}}">
+                                                    <span t-field="visitLast.status"/>
+
+                                                </td>
+                                            </t>
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                    <footer>
+                        Дата друку:
+                        <t t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                        | Місто:
+                        <t t-esc="request.env.user.company_id.city"/>
+                    </footer>
+                </main>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -32,7 +32,6 @@ class HHDoctor(models.Model):
 
     patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
-        inverse_name='doctor_ids',
         string="Patients"
     )
     intern_ids = fields.One2many(
