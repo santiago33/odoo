@@ -4,7 +4,7 @@
         <field name="birthday">1970-02-02</field>
         <field name="gender">w</field>
         <field name="phone">380667778888</field>
-        <field name="doctor_ids" eval="[(6, 0, [ref('hh_doctor_1')])]"/>
+        <field name="doctor_id" ref="hh_doctor_1"/>
 
     </record>
     <record id="hh_patient_2" model="hr.hospital.patient">
@@ -12,7 +12,7 @@
         <field name="birthday">1980-03-03</field>
         <field name="gender">m</field>
         <field name="phone">380556667777</field>
-        <field name="doctor_ids" eval="[(6, 0, [ref('hh_doctor_2')])]"/>
+        <field name="doctor_id" ref="hh_doctor_2"/>
 
     </record>
     <record id="hh_patient_3" model="hr.hospital.patient">
@@ -20,6 +20,6 @@
         <field name="birthday">1990-04-04</field>
         <field name="gender">m</field>
         <field name="phone">380445556666</field>
-        <field name="doctor_ids" eval="[(6, 0, [ref('hh_doctor_3')])]"/>
+        <field name="doctor_id" ref="hh_doctor_3"/>
     </record>
 </odoo>
