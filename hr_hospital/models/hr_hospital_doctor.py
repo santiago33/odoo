@@ -40,6 +40,7 @@ class HHDoctor(models.Model):
         string="Interns",
         domain=[('is_intern', '=', True)],
     )
+    user_id = fields.Many2one('res.users', string="User", ondelete="set null")
 
     @api.constrains('mentor_id')
     def _check_mentor_id(self):

@@ -1,0 +1,30 @@
+<odoo>
+    <record id="hh_group_patient" model="res.groups">
+        <field name="name">Patient</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record id="hh_group_intern" model="res.groups">
+        <field name="name">Intern</field>
+        <field name="implied_ids" eval="[(4, ref('hr_hospital.hh_group_patient'))]"/>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record id="hh_group_doctor" model="res.groups">
+        <field name="name">Doctor</field>
+        <field name="implied_ids" eval="[(4, ref('hr_hospital.hh_group_intern'))]"/>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record id="hh_group_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="implied_ids" eval="[(4, ref('hr_hospital.hh_group_doctor'))]"/>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record id="hh_group_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="implied_ids" eval="[(4, ref('hr_hospital.hh_group_manager'))]"/>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+</odoo>
