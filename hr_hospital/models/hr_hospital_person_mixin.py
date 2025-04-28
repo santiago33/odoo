@@ -9,7 +9,10 @@ class PersonMixin(models.AbstractModel):
     _name = 'hr.hospital.person.mixin'
     _description = 'Person mixin'
 
-    full_name = fields.Char(required=True, )
+    full_name = fields.Char(
+        required=True,
+        translate=True,
+    )
     phone = fields.Char()
     photo = fields.Binary()
     gender = fields.Selection(

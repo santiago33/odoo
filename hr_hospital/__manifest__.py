@@ -49,6 +49,6 @@
     'auto_install': False,
 
     'images': [
-        'static/description/hospital.png',
+        'static/description/icon.png',
     ],
 }

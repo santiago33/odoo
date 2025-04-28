@@ -14,8 +14,13 @@ class HHDiseases(models.Model):
     _rec_name = 'complete_name'
     _order = 'complete_name'
 
-    name = fields.Char()
-    description = fields.Text()
+    name = fields.Char(
+        required=True,
+        translate=True,
+    )
+    description = fields.Text(
+        translate=True,
+    )
 
     parent_id = fields.Many2one(
         comodel_name='hr.hospital.diseases',

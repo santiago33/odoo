@@ -8,6 +8,16 @@ _logger = logging.getLogger(__name__)
 
 
 class HHVisit(models.Model):
+    """Model to store information about patients' visits to doctors.
+    Attributes:
+        patient_id (Many2one): Reference to the patient for the visit.
+        doctor_id (Many2one): Reference to the doctor responsible for the visit.
+        status (Selection): The status of the visit
+        scheduled_date (Datetime): The scheduled date and time of the visit.
+        completed_date (Datetime): The actual date
+        and time when the visit was completed (if applicable).
+        diagnosis_id (Many2one): A list of diagnosis the visit.
+    """
     _name = 'hr.hospital.visit'
     _description = 'Visit patient'
 
@@ -75,6 +85,11 @@ class HHVisit(models.Model):
 
     @api.model
     def get_color_status(self, status):
+        """
+        Повертає клас кольору для відображення статусу візиту.
+        :param status: Status visit ('scheduled', 'completed', 'cancelled')
+        :return: Class CSS for color
+        """
         classTxt = ''
         if status == 'scheduled':
             classTxt = 'text-warning'
