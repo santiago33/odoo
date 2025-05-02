@@ -1,0 +1,56 @@
+<odoo>
+
+    <record id="brand_1" model="as.car.brand">
+        <field name="name">FORD</field>
+    </record>
+
+    <record id="brand_2" model="as.car.brand">
+        <field name="name">BMW</field>
+    </record>
+
+    <record id="brand_3" model="as.car.brand">
+        <field name="name">AUDI</field>
+    </record>
+    <record id="brand_4" model="as.car.brand">
+        <field name="name">VOLVO</field>
+    </record>
+    <record id="model_1" model="as.car.model">
+        <field name="name">C-MAX</field>
+        <field name="start_date">2007-01-01</field>
+        <field name="end_date">2010-01-01</field>
+        <field name="brand_id" ref="brand_1"/>
+    </record>
+    <record id="model_2" model="as.car.model">
+        <field name="name">X1 (E83)</field>
+        <field name="start_date">2004-01-01</field>
+        <field name="end_date">2011-01-01</field>
+        <field name="brand_id" ref="brand_2"/>
+    </record>
+    <record id="model_3" model="as.car.model">
+        <field name="name">5 (E39)</field>
+        <field name="start_date">1995-01-10</field>
+        <field name="end_date">2003-01-01</field>
+        <field name="brand_id" ref="brand_2"/>
+    </record>
+        <record id="model_4" model="as.car.model">
+        <field name="name">A8 (4E_)</field>
+        <field name="start_date">2002-01-01</field>
+        <field name="end_date">2010-01-01</field>
+        <field name="brand_id" ref="brand_3"/>
+    </record>
+        <record id="model_5" model="as.car.model">
+        <field name="name">Q7 (4M)</field>
+        <field name="start_date">2015-01-01</field>
+        <field name="end_date">2024-01-01</field>
+        <field name="brand_id" ref="brand_3"/>
+    </record>
+        <record id="model_6" model="as.car.model">
+        <field name="name">XC70 II</field>
+        <field name="start_date">2007-01-01</field>
+        <field name="end_date">2015-01-01</field>
+        <field name="brand_id" ref="brand_4"/>
+    </record>
+
+
+
+</odoo>

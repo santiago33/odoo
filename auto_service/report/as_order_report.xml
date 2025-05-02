@@ -1,0 +1,104 @@
+<odoo>
+    <record id="as_order_report_paper_format" model="report.paperformat">
+        <field name="name">A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">30</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">15</field>
+        <field name="dpi">120</field>
+    </record>
+
+    <template id="report_as_order_document">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="order">
+                    <div class="page">
+                        <h2>Order Report</h2>
+                        <p>
+                            <strong>Order:</strong>
+                            <t t-esc="order.name"/>
+                        </p>
+                        <p>
+                            <strong>Partner:</strong>
+                            <t t-esc="order.partner_id.name"/>
+                        </p>
+                        <p>
+                            <strong>Vehicle:</strong>
+                            <t t-esc="order.vehicle_id.name"/>
+                        </p>
+                        <p>
+                            <strong>Date Start:</strong>
+                            <t t-esc="order.date_start"/>
+                        </p>
+                        <p>
+                            <strong>Date End:</strong>
+                            <t t-esc="order.date_end"/>
+                        </p>
+                        <p>
+                            <strong>Status:</strong>
+                            <t t-esc="order.status"/>
+                        </p>
+                        <p>
+                            <strong>Notes:</strong>
+                            <t t-esc="order.notes"/>
+                        </p>
+
+
+                        <h3>Items</h3>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price unit</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="order.item_ids" t-as="item">
+                                    <td>
+                                        <t t-esc="item.product_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.qty"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.price"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.subtotal_price"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" align="right">Total Cost:</td>
+                                    <td> <t t-esc="order.total_cost"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_as_order" model="ir.actions.report">
+        <field name="name">Report for order</field>
+        <field name="model">as.order</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">auto_service.report_as_order_document</field>
+        <field name="report_file">auto_service.report_as_order_document</field>
+        <field name="print_report_name">('Order - %s' % (object.name))</field>
+        <field name="attachment"/>
+        <field name="binding_model_id" ref="model_as_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id"
+               ref="auto_service.as_order_report_paper_format"/>
+    </record>
+</odoo>

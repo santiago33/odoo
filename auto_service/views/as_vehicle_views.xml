@@ -1,0 +1,110 @@
+<odoo>
+
+    <record id="as_vehicle_tree" model="ir.ui.view">
+        <field name="name">as.vehicle.tree ()</field>
+        <field name="model">as.vehicle</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="license_plate"/>
+                <field name="vin"/>
+                <field name="brand_id"/>
+                <field name="model_id"/>
+                <field name="year"/>
+                <field name="notes"/>
+
+
+            </tree>
+        </field>
+    </record>
+    <record id="as_vehicle_form" model="ir.ui.view">
+        <field name="name">as.vehicle.form ()</field>
+        <field name="model">as.vehicle</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="license_plate"/>
+                        <field name="vin" widget="char"
+                               options="{'size': 17}"/>
+                        <field name="brand_id"/>
+                        <field name="model_id"
+                               widget="selection"
+                               domain="[('brand_id', '=', brand_id)]"/>
+                        <field name="year"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="as_vehicle_kanban" model="ir.ui.view">
+        <field name="name">as.vehicle.kanban ()
+        </field>
+        <field name="model">as.vehicle</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="partner_id">
+                <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable">
+                            <a role="menuitem" type="edit"
+                               class="dropdown-item">
+                                Edit
+                            </a>
+                        </t>
+                        <t t-if="widget.deletable">
+                            <a role="menuitem" type="delete"
+                               class="dropdown-item">
+                                Delete
+                            </a>
+                        </t>
+                    </t>
+
+
+                    <t t-name="kanban-box">
+                        <div>
+                            <div class="o_kanban_record_title">
+                                <field name="name"/>
+                            </div>
+
+
+                            <div class="oe_kanban_card">
+                                <field name="vin"/>
+                            </div>
+                              <div class="oe_kanban_card">
+                                <field name="year"/>
+                            </div>
+                               <div class="oe_kanban_card">
+                                <field name="notes"/>
+                            </div>
+
+                            <div class="o_kanban_record_bottom">
+                                <button class="btn btn-primary oe_kanban_action"
+                                        string="record"
+                                        name="action_create_order"
+                                        type="object"
+                                >
+                                    <i class="fa fa-file-text"/>
+                                    New order
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="action_as_vehicle_window" model="ir.actions.act_window">
+        <field name="name">Vehicle</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">as.vehicle</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+</odoo>

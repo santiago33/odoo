@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access__as_car_brand__group_user,access__as_car_brand__group_user,model_as_car_brand,base.group_user,1,1,1,1
+access__as_car_model__group_user,access__as_car_model__group_user,model_as_car_model,base.group_user,1,1,1,1
+access__as_vehicle__group_user,access__as_vehicle__group_user,model_as_vehicle,base.group_user,1,1,1,1
+access__as_order__group_user,access__as_order__group_user,model_as_order,base.group_user,1,1,1,1
+access__as_order_item__group_user,access__as_order_item__group_user,model_as_order_item,base.group_user,1,1,1,1
+access__as_order_done_wizard__group_user,access__as_order_done_wizard__group_user,model_as_order_done_wizard,base.group_user,1,1,1,1

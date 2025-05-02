@@ -1,0 +1,53 @@
+<odoo>
+    <record id="as_car_model_search" model="ir.ui.view">
+        <field name="name">car.model</field>
+        <field name="model">as.car.model</field>
+        <field name="arch" type="xml">
+            <search string="Пошук візитів">
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_brand" string="Brand" domain="[]"
+                            context="{'group_by': 'brand_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="as_car_model_tree" model="ir.ui.view">
+        <field name="name">as.car.model.tree ()</field>
+        <field name="model">as.car.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="brand_id"/>
+
+            </tree>
+        </field>
+    </record>
+    <record id="as_car_model_form" model="ir.ui.view">
+        <field name="name">as.car.model.form ()</field>
+        <field name="model">as.car.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="brand_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_as_car_model_window" model="ir.actions.act_window">
+        <field name="name">Models car</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">as.car.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

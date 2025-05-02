@@ -1,0 +1,106 @@
+<odoo>
+    <record id="as_order_tree" model="ir.ui.view">
+        <field name="name">as.order.tree ()</field>
+        <field name="model">as.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="vehicle_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="status"/>
+                <field name="mechanic_id"/>
+                <field name="total_cost"/>
+                <field name="item_ids"/>
+                <button name="action_open_done_wizard"
+                        type="object"
+                        string="Done"
+                        icon="fa-check"
+                        invisible="status== 'done'"
+                        class="btn-primary"/>
+                <button name="print_report"
+                        string="Print Order"
+                        type="object"
+                        class="btn-default"
+                        icon="fa-print"/>
+            </tree>
+        </field>
+    </record>
+    <record id="as_order_form" model="ir.ui.view">
+        <field name="name">as.order.form ()</field>
+        <field name="model">as.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                    <field name="status"
+                           widget="statusbar"
+                           options="{'clickable':1}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="partner_id"
+                                   readonly="'partner_id' in  context.readonly_field"
+                            />
+                            <field name="vehicle_id"
+                                   domain="[('partner_id', '=', partner_id)]"
+                                   widget="Selection"
+                                   readonly="'vehicle_id' in  context.readonly_field"
+
+                            />
+
+                            <field name="mechanic_id"/>
+                            <field name="total_cost"/>
+                        </group>
+                        <group>
+
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Items">
+                            <field name="item_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="price"/>
+                                    <field name="subtotal_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="as_order_pivot" model="ir.ui.view">
+        <field name="name">as.order.pivot ()</field>
+        <field name="model">as.order</field>
+        <field name="priority">50</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot visit">
+                <field name="partner_id" type="row"/>
+                <field name="status" type="col"/>
+
+                <field name="date_end" interval="month"/>
+            </pivot>
+
+
+        </field>
+    </record>
+
+
+    <record id="action_as_order_window" model="ir.actions.act_window">
+        <field name="name">order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">as.order</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+
+</odoo>

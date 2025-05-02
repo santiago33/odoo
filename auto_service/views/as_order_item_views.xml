@@ -1,0 +1,40 @@
+<odoo>
+    <record id="as_order_item_tree" model="ir.ui.view">
+        <field name="name">as.order.item.tree ()</field>
+        <field name="model">as.order.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="qty"/>
+                <field name="price"/>
+                <field name="subtotal_price"/>
+            </tree>
+        </field>
+    </record>
+    <record id="as_order_item_form" model="ir.ui.view">
+        <field name="name">as.order.item.form ()</field>
+        <field name="model">as.order.item</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_id"/>
+                        <field name="product_id"/>
+                        <field name="qty"/>
+                        <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_as_order_item_window" model="ir.actions.act_window">
+        <field name="name">order.item</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">as.order.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>
