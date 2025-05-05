@@ -1,0 +1,546 @@
+# Ukrainian translation for Odoo Server
+# This file contains the translation of the following modules:
+# 	* auto_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-05 08:52+0000\n"
+"PO-Revision-Date: 2024-05-05 10:00+0300\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: Ukrainian <your.team@example.com>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_as_order_item
+msgid " Order item"
+msgstr " Позиція замовлення"
+
+#. module: auto_service
+#: model:ir.actions.report,print_report_name:auto_service.action_report_as_order
+msgid "('Order - %s' % (object.name))"
+msgstr "('Замовлення - %s' % (object.name))"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_3
+msgid "5 (E39)"
+msgstr "5 (E39)"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_vehicle_kanban
+msgid ""
+"<i class=\"fa fa-file-text\"/>\n"
+"                                    New order"
+msgstr ""
+"<i class=\"fa fa-file-text\"/>\n"
+"                                    Нове замовлення"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Date End:</strong>"
+msgstr "<strong>Дата завершення:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Date Start:</strong>"
+msgstr "<strong>Дата початку:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Notes:</strong>"
+msgstr "<strong>Примітки:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Order:</strong>"
+msgstr "<strong>Замовлення:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Partner:</strong>"
+msgstr "<strong>Партнер:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Статус:</strong>"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "<strong>Vehicle:</strong>"
+msgstr "<strong>Транспорт:</strong>"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_4
+msgid "A8 (4E_)"
+msgstr "A8 (4E_)"
+
+#. module: auto_service
+#: model:as.car.brand,name:auto_service.brand_3
+msgid "AUDI"
+msgstr "AUDI"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_4
+msgid "Alternator A0001"
+msgstr "Генератор A0001"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_5
+msgid "Alternator A0002"
+msgstr "Генератор A0002"
+
+#. module: auto_service
+#: model:ir.ui.menu,name:auto_service.as_main_menu
+msgid "Automation STO"
+msgstr "Автоматизація СТО"
+
+#. module: auto_service
+#: model:as.car.brand,name:auto_service.brand_2
+msgid "BMW"
+msgstr "BMW"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_car_model_search
+msgid "Brand"
+msgstr "Бренд"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_1
+msgid "C-MAX"
+msgstr "C-MAX"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.view_as_order_done_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: auto_service
+#: model:ir.actions.act_window,name:auto_service.action_as_car_brand_window
+#: model:ir.model,name:auto_service.model_as_car_brand
+msgid "Car Manufacture"
+msgstr "Виробник авто"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__model_ids
+msgid "Car Model"
+msgstr "Модель авто"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__brand_id
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__brand_id
+msgid "Car manufacture"
+msgstr "Виробник авто"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_as_car_model
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__model_id
+msgid "Car model"
+msgstr "Модель авто"
+
+#. module: auto_service
+#: model:ir.ui.menu,name:auto_service.as_cars_menu
+msgid "Cars"
+msgstr "Автомобілі"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__close_comment
+msgid "Close Comment"
+msgstr "Коментар закриття"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.view_as_order_done_wizard_form
+msgid "Close Order"
+msgstr "Закрити замовлення"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__create_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__create_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order__create_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__create_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__create_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__create_date
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__create_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order__create_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__create_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__create_date
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_as_vehicle
+msgid "Customer Vehicle"
+msgstr "Транспорт клієнта"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__date_end
+msgid "Date End"
+msgstr "Дата завершення"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__date_start
+msgid "Date Start"
+msgstr "Дата початку"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_vehicle_kanban
+msgid "Delete"
+msgstr "Видалити"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__display_name
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__display_name
+#: model:ir.model.fields,field_description:auto_service.field_as_order__display_name
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__display_name
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__display_name
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_order_tree
+msgid "Done"
+msgstr "Виконано"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.view_as_order_done_wizard_form
+msgid "Done Order"
+msgstr "Виконане замовлення"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_vehicle_kanban
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__end_date
+msgid "End Date"
+msgstr "Дата завершення"
+
+#. module: auto_service
+#: model:as.car.brand,name:auto_service.brand_1
+msgid "FORD"
+msgstr "FORD"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__id
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__id
+#: model:ir.model.fields,field_description:auto_service.field_as_order__id
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__id
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__id
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_order_form
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Items"
+msgstr "Позиції"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__item_ids
+msgid "Items order"
+msgstr "Позиції замовлення"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__write_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__write_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order__write_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__write_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__write_uid
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновив"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__write_date
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__write_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order__write_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__write_date
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__write_date
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__write_date
+msgid "Last Updated on"
+msgstr "Востаннє оновлено"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__license_plate
+msgid "License Plate"
+msgstr "Номерний знак"
+
+#. module: auto_service
+#. odoo-python
+#: code:addons/auto_service/models/auto_service_vehicle.py:0
+#: model:ir.model.constraint,message:auto_service.constraint_as_vehicle_license_plate_unique
+#, python-format
+msgid "License plate must be unique!"
+msgstr "Номерний знак повинен бути унікальним!"
+
+#. module: auto_service
+#: model:ir.ui.menu,name:auto_service.as_car_brand_view
+msgid "Manufacture cars"
+msgstr "Виробники авто"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__mechanic_id
+msgid "Mechanic"
+msgstr "Механік"
+
+#. module: auto_service
+#: model:ir.ui.menu,name:auto_service.as_car_model_view
+msgid "Model cars"
+msgstr "Моделі авто"
+
+#. module: auto_service
+#: model:ir.actions.act_window,name:auto_service.action_as_car_model_window
+msgid "Models car"
+msgstr "Моделі авто"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_brand__name
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__name
+#: model:ir.model.fields,field_description:auto_service.field_as_order__name
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__notes
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__notes
+msgid "Notes"
+msgstr "Примітки"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_as_order
+#: model:ir.model.fields,field_description:auto_service.field_as_order_done_wizard__order_id
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__order_id
+#: model:ir.ui.menu,name:auto_service.as_order_menu
+msgid "Order"
+msgstr "Замовлення"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Order Report"
+msgstr "Звіт по замовленню"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_product_product__is_auto_part
+#: model:ir.model.fields,field_description:auto_service.field_product_template__is_auto_part
+msgid "Part for car"
+msgstr "Запчастина для авто"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__partner_id
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__partner_id
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_order_pivot
+msgid "Pivot visit"
+msgstr "Відвідування (зведена)"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__price
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Price unit"
+msgstr "Ціна за одиницю"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_order_tree
+msgid "Print Order"
+msgstr "Друк замовлення"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_product_template
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__product_id
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Product"
+msgstr "Товар"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_5
+msgid "Q7 (4M)"
+msgstr "Q7 (4M)"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__qty
+msgid "Qty"
+msgstr "Кількість"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: auto_service
+#: model:ir.actions.report,name:auto_service.action_report_as_order
+msgid "Report for order"
+msgstr "Звіт по замовленню"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_car_model__start_date
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_2
+msgid "Starter S0001"
+msgstr "Стартер S0001"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_3
+msgid "Starter S0002"
+msgstr "Стартер S0002"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_6
+msgid "Starter motor drive SD0010"
+msgstr "Привід стартера SD0010"
+
+#. module: auto_service
+#: model:product.template,name:auto_service.demo_product_template_1
+msgid "Starter motor drive SD0512"
+msgstr "Привід стартера SD0512"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__status
+msgid "Status"
+msgstr "Статус"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Subtotal"
+msgstr "Проміжний підсумок"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order_item__subtotal_price
+msgid "Subtotal Price"
+msgstr "Проміжна сума"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_order__total_cost
+msgid "Total Cost"
+msgstr "Загальна вартість"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document
+msgid "Total Cost:"
+msgstr "Загальна вартість:"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__vin
+msgid "VIN Code"
+msgstr "VIN-код"
+
+#. module: auto_service
+#: model:as.car.brand,name:auto_service.brand_4
+msgid "VOLVO"
+msgstr "VOLVO"
+
+#. module: auto_service
+#: model:ir.actions.act_window,name:auto_service.action_as_vehicle_window
+#: model:ir.model.fields,field_description:auto_service.field_as_order__vehicle_id
+#: model:ir.ui.menu,name:auto_service.as_vehicle_view
+msgid "Vehicle"
+msgstr "Транспорт"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_res_partner__vehicle_ids
+#: model:ir.model.fields,field_description:auto_service.field_res_users__vehicle_ids
+msgid "Vehicles"
+msgstr "Транспортні засоби"
+
+#. module: auto_service
+#: model:ir.model,name:auto_service.model_as_order_done_wizard
+msgid "Wizard for closing the order"
+msgstr "Майстер закриття замовлення"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_2
+msgid "X1 (E83)"
+msgstr "X1 (E83)"
+
+#. module: auto_service
+#: model:as.car.model,name:auto_service.model_6
+msgid "XC70 II"
+msgstr "XC70 II"
+
+#. module: auto_service
+#: model:ir.model.fields,field_description:auto_service.field_as_vehicle__year
+msgid "Year"
+msgstr "Рік"
+
+#. module: auto_service
+#. odoo-python
+#: code:addons/auto_service/models/auto_service_order.py:0
+#: model:ir.model.fields.selection,name:auto_service.selection__as_order__status__cancelled
+#, python-format
+msgid "cancelled"
+msgstr "скасовано"
+
+#. module: auto_service
+#. odoo-python
+#: code:addons/auto_service/models/auto_service_order.py:0
+#: model:ir.model.fields.selection,name:auto_service.selection__as_order__status__done
+#, python-format
+msgid "done"
+msgstr "виконано"
+
+#. module: auto_service
+#. odoo-python
+#: code:addons/auto_service/models/auto_service_order.py:0
+#: model:ir.model.fields.selection,name:auto_service.selection__as_order__status__draft
+#, python-format
+msgid "draft"
+msgstr "чернетка"
+
+#. module: auto_service
+#. odoo-python
+#: code:addons/auto_service/models/auto_service_order.py:0
+#: model:ir.model.fields.selection,name:auto_service.selection__as_order__status__in_progress
+#, python-format
+msgid "in_progress"
+msgstr "в роботі"
+
+#. module: auto_service
+#: model:ir.actions.act_window,name:auto_service.action_as_order_window
+msgid "order"
+msgstr "Замовлення"
+
+#. module: auto_service
+#: model:ir.actions.act_window,name:auto_service.action_as_order_item_window
+msgid "order.item"
+msgstr "позиція.замовлення"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_vehicle_kanban
+msgid "record"
+msgstr "запис"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_car_model_search
+msgid "Group by"
+msgstr "Групувати за"
+
+#. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_car_model_search
+msgid "Search"
+msgstr "Пошук"

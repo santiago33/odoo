@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="module_auto_service_category" model="ir.module.category">
+        <field name="name">Auto Service</field>
+        <field name="description">Auto Service Module Access Rights</field>
+        <field name="sequence">100</field>
+    </record>
+
+    <record id="group_auto_service_user" model="res.groups">
+        <field name="name">Auto Service User</field>
+        <field name="category_id" ref="module_auto_service_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Regular user of Auto Service module</field>
+    </record>
+
+    <record id="group_auto_service_admin" model="res.groups">
+        <field name="name">Auto Service Admin</field>
+        <field name="category_id" ref="module_auto_service_category"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_auto_service_user'))]"/>
+        <field name="comment">Administrator of Auto Service module</field>
+    </record>
+</odoo>

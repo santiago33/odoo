@@ -1,8 +1,6 @@
 import logging
-from email.policy import default
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
 

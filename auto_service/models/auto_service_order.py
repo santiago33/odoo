@@ -1,7 +1,6 @@
 import logging
 
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
 from odoo.fields import One2many
 
 _logger = logging.getLogger(__name__)
@@ -62,7 +61,9 @@ class ASOrder(models.Model):
     @api.depends('partner_id.name', 'vehicle_id.name')
     def _compute_name(self):
         for record in self:
-            record.name = f'{record.partner_id.name or ''} {record.vehicle_id.name or ''} #{record.id or ''}'
+            record.name = (f'{record.partner_id.name or ''} '
+                           f'{record.vehicle_id.name or ''} '
+                           f'#{record.id or ''}')
 
     def action_open_done_wizard(self):
         return {

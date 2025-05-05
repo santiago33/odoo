@@ -1,7 +1,5 @@
 import logging
-
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
@@ -9,7 +7,6 @@ _logger = logging.getLogger(__name__)
 class ASOrderItem(models.Model):
     _name = 'as.order.item'
     _description = ' Order item'
-
 
     order_id = fields.Many2one(
         comodel_name='as.order',
@@ -35,4 +32,8 @@ class ASOrderItem(models.Model):
         for record in self:
             record.subtotal_price = record.price * record.qty
 
-
+    @api.onchange('product_id')
+    def onchange_price(self):
+        for record in self:
+            if record.product_id:
+                record.price = record.product_id.list_price

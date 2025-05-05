@@ -3,8 +3,8 @@
         <field name="name">car.model</field>
         <field name="model">as.car.model</field>
         <field name="arch" type="xml">
-            <search string="Пошук візитів">
-                <group expand="0" string="Групувати за">
+            <search string="Search">
+                <group expand="0" string="Group by">
                     <filter name="group_by_brand" string="Brand" domain="[]"
                             context="{'group_by': 'brand_id'}"/>
                 </group>

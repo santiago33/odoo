@@ -1,19 +1,18 @@
 <odoo>
-
     <record id="brand_1" model="as.car.brand">
         <field name="name">FORD</field>
     </record>
-
     <record id="brand_2" model="as.car.brand">
         <field name="name">BMW</field>
     </record>
-
     <record id="brand_3" model="as.car.brand">
         <field name="name">AUDI</field>
     </record>
     <record id="brand_4" model="as.car.brand">
         <field name="name">VOLVO</field>
     </record>
+
+
     <record id="model_1" model="as.car.model">
         <field name="name">C-MAX</field>
         <field name="start_date">2007-01-01</field>
@@ -32,19 +31,19 @@
         <field name="end_date">2003-01-01</field>
         <field name="brand_id" ref="brand_2"/>
     </record>
-        <record id="model_4" model="as.car.model">
+    <record id="model_4" model="as.car.model">
         <field name="name">A8 (4E_)</field>
         <field name="start_date">2002-01-01</field>
         <field name="end_date">2010-01-01</field>
         <field name="brand_id" ref="brand_3"/>
     </record>
-        <record id="model_5" model="as.car.model">
+    <record id="model_5" model="as.car.model">
         <field name="name">Q7 (4M)</field>
         <field name="start_date">2015-01-01</field>
         <field name="end_date">2024-01-01</field>
         <field name="brand_id" ref="brand_3"/>
     </record>
-        <record id="model_6" model="as.car.model">
+    <record id="model_6" model="as.car.model">
         <field name="name">XC70 II</field>
         <field name="start_date">2007-01-01</field>
         <field name="end_date">2015-01-01</field>
@@ -52,5 +51,161 @@
     </record>
 
 
+    <record id="vehicle_1" model="as.vehicle">
+        <field name="license_plate">KA7777KA</field>
+        <field name="vin">KFERFD345676FD345</field>
+        <field name="year">2008</field>
+        <field name="partner_id" ref="base.res_partner_2"/>
+        <field name="model_id" ref="model_3"/>
+        <field name="brand_id" ref="brand_2"/>
+    </record>
+    <record id="vehicle_2" model="as.vehicle">
+        <field name="license_plate">KA1547KA</field>
+        <field name="vin">MXAWFD345676F4778</field>
+        <field name="year">2015</field>
+        <field name="partner_id" ref="base.res_partner_3"/>
+        <field name="model_id" ref="model_4"/>
+        <field name="brand_id" ref="brand_3"/>
+    </record>
+    <record id="vehicle_3" model="as.vehicle">
+        <field name="license_plate">KA78541BK</field>
+        <field name="vin">WSJYOD345676F9636</field>
+        <field name="year">2021</field>
+        <field name="partner_id" ref="base.res_partner_4"/>
+        <field name="model_id" ref="model_1"/>
+        <field name="brand_id" ref="brand_1"/>
+    </record>
+
+
+    <record id="demo_product_template_1" model="product.template">
+        <field name="name">Starter motor drive SD0512</field>
+        <field name="type">product</field>
+        <field name="default_code">SD0512</field>
+        <field name="list_price">89</field>
+        <field name="standard_price">49</field>
+        <field name="is_auto_part">True</field>
+    </record>
+    <record id="demo_product_template_2" model="product.template">
+        <field name="name">Starter S0001</field>
+        <field name="type">product</field>
+        <field name="default_code">S0001</field>
+        <field name="list_price">99</field>
+        <field name="standard_price">48</field>
+        <field name="is_auto_part">True</field>
+    </record>
+    <record id="demo_product_template_3" model="product.template">
+        <field name="name">Starter S0002</field>
+        <field name="type">product</field>
+        <field name="default_code">S0002</field>
+        <field name="list_price">33</field>
+        <field name="standard_price">29</field>
+        <field name="is_auto_part">True</field>
+    </record>
+    <record id="demo_product_template_4" model="product.template">
+        <field name="name">Alternator A0001</field>
+        <field name="type">product</field>
+        <field name="default_code">A0001</field>
+        <field name="list_price">78</field>
+        <field name="standard_price">59</field>
+        <field name="is_auto_part">True</field>
+    </record>
+    <record id="demo_product_template_5" model="product.template">
+        <field name="name">Alternator A0002</field>
+        <field name="type">product</field>
+        <field name="default_code">A0002</field>
+        <field name="list_price">35</field>
+        <field name="standard_price">29</field>
+        <field name="is_auto_part">True</field>
+    </record>
+    <record id="demo_product_template_6" model="product.template">
+        <field name="name">Starter motor drive SD0010</field>
+        <field name="type">product</field>
+        <field name="default_code">SD0010</field>
+        <field name="list_price">109</field>
+        <field name="standard_price">75</field>
+        <field name="is_auto_part">True</field>
+    </record>
+
+
+    <record id="order_1" model="as.order">
+        <field name="date_start"
+               eval="(DateTime.now() - relativedelta(days=3))"/>
+        <field name="date_end"
+               eval="(DateTime.now() - relativedelta(days=2))"/>
+        <field name="status">done</field>
+        <field name="partner_id" ref="base.res_partner_4"/>
+        <field name="vehicle_id" ref="vehicle_3"/>
+        <field name="mechanic_id" ref="base.user_admin"/>
+    </record>
+    <record id="order_2" model="as.order">
+        <field name="date_start"
+               eval="(DateTime.now() - relativedelta(days=2))"/>
+        <field name="date_end"
+               eval="(DateTime.now() - relativedelta(days=1))"/>
+        <field name="status">done</field>
+        <field name="partner_id" ref="base.res_partner_4"/>
+        <field name="vehicle_id" ref="vehicle_3"/>
+        <field name="mechanic_id" ref="base.user_admin"/>
+    </record>
+    <record id="order_3" model="as.order">
+        <field name="date_start"
+               eval="DateTime.now()"/>
+        <field name="status">draft</field>
+        <field name="partner_id" ref="base.res_partner_4"/>
+        <field name="vehicle_id" ref="vehicle_3"/>
+        <field name="mechanic_id" ref="base.user_admin"/>
+    </record>
+    <record id="order_4" model="as.order">
+        <field name="date_start"
+               eval="(DateTime.now() + relativedelta(days=1))"/>
+        <field name="status">draft</field>
+        <field name="partner_id" ref="base.res_partner_3"/>
+        <field name="vehicle_id" ref="vehicle_2"/>
+        <field name="mechanic_id" ref="base.user_admin"/>
+    </record>
+
+
+    <record id="order_item_1" model="as.order.item">
+        <field name="qty">1</field>
+        <field name="price">120</field>
+        <field name="order_id" ref="order_1"/>
+        <field name="product_id" ref="demo_product_template_1"/>
+    </record>
+    <record id="order_item_2" model="as.order.item">
+        <field name="qty">2</field>
+        <field name="price">100</field>
+        <field name="order_id" ref="order_1"/>
+        <field name="product_id" ref="demo_product_template_2"/>
+    </record>
+    <record id="order_item_3" model="as.order.item">
+        <field name="qty">1</field>
+        <field name="price">45</field>
+        <field name="order_id" ref="order_2"/>
+        <field name="product_id" ref="demo_product_template_3"/>
+    </record>
+    <record id="order_item_4" model="as.order.item">
+        <field name="qty">3</field>
+        <field name="price">78</field>
+        <field name="order_id" ref="order_3"/>
+        <field name="product_id" ref="demo_product_template_4"/>
+    </record>
+    <record id="order_item_5" model="as.order.item">
+        <field name="qty">1</field>
+        <field name="price">56</field>
+        <field name="order_id" ref="order_3"/>
+        <field name="product_id" ref="demo_product_template_5"/>
+    </record>
+    <record id="order_item_6" model="as.order.item">
+        <field name="qty">5</field>
+        <field name="price">98</field>
+        <field name="order_id" ref="order_4"/>
+        <field name="product_id" ref="demo_product_template_6"/>
+    </record>
+    <record id="order_item_7" model="as.order.item">
+        <field name="qty">1</field>
+        <field name="price">150</field>
+        <field name="order_id" ref="order_4"/>
+        <field name="product_id" ref="demo_product_template_1"/>
+    </record>
 
 </odoo>

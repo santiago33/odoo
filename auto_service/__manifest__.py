@@ -1,25 +1,21 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Аutomation of car workshops",
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
-
-    'description': """
-Long description of module's purpose
-    """,
-
+    'license': 'OPL-1',
     'author': "Oleksandr Yushko",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '17.0',
+    'version': '17.0.0.1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'product'],
 
     # always loaded
     'data': [
+        'security/auto_service_security_groups.xml',
+        'security/auto_service_security.xml',
         'security/ir.model.access.csv',
 
         'report/as_order_report.xml',
@@ -36,8 +32,6 @@ Long description of module's purpose
         'views/menu_auto_service.xml',
 
         'wizard/as_order_to_done_wizard_view.xml',
-
-
 
     ],
     # only loaded in demonstration mode
