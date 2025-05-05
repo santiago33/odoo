@@ -369,6 +369,11 @@ msgid "Print Order"
 msgstr "Друк замовлення"
 
 #. module: auto_service
+#: model_terms:ir.ui.view,arch_db:auto_service.as_order_tree
+msgid "Complete"
+msgstr "Завершити"
+
+#. module: auto_service
 #: model:ir.model,name:auto_service.model_product_template
 #: model:ir.model.fields,field_description:auto_service.field_as_order_item__product_id
 #: model_terms:ir.ui.view,arch_db:auto_service.report_as_order_document

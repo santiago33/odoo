@@ -14,7 +14,7 @@
                 <field name="item_ids"/>
                 <button name="action_open_done_wizard"
                         type="object"
-                        string="Done"
+                        string="Complete"
                         icon="fa-check"
                         invisible="status== 'done'"
                         class="btn-primary"/>
